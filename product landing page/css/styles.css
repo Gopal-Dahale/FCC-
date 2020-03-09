@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  --positive-shift: 33.33%;
+  --negative-shift: -33.33%;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: #444;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* utility */
+.container {
+  width: 85vw;
+  margin: 0 auto;
+  background: #f4f4f4;
+  padding: 2rem;
+  border-radius: 5px;
+}
+/* header */
+#header {
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-gap: 1rem; */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* heading */
+#header .heading {
+  display: flex;
+  line-height: 1.2;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / span 4;
+}
+#header .heading img {
+  width: 8%;
+  padding: 1rem;
+}
+#header .heading h1 {
+  margin: 0;
+  padding: 1rem;
+}
+/* nav bar */
+#nav-bar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100vw;
+}
+#nav-bar ul li {
+  padding: 1rem;
+  margin-top: 1.7rem;
+  margin-right: 0.8rem;
+  background: #03b875;
+  border-radius: 5px;
+}
+#nav-bar ul li:hover {
+  background: #03945f;
+}
+#nav-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+/* line break */
+.line-break {
+  height: 3px;
+  padding: 0;
+  background: #ccc;
+  margin-top: 130px;
+  margin-bottom: 20px;
+}
+/* showcase */
+.showcase {
+  height: 70vh;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  position: relative;
+  background: linear-gradient(to right, red, green);
+  opacity: 1;
+  z-index: 2;
+}
+.showcase::before {
+  content: "";
+  z-index: 1;
+  /* z-index: 1; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../img/showcase.png") no-repeat center center/cover;
+  height: 70vh;
+  width: 100vw;
+  opacity: 0.5;
+}
+.showcase::after {
+  content: "Ben is now an international mega-star super hero after his secret identity was revealed. Equipped with the new Ultimatrix, Ben must travel across the globe to gather ancient Galvan artifacts to save Earth from a mysterious cosmic storm. Take control of Ben and 17 new alien forms and travel through various real world locations such as Tokyo, Paris, and Rome.";
+  z-index: 3;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 15vh;
+  margin: 0 8rem;
+  padding: 0 8rem;
+  line-height: 1.7;
+
+  color: white;
+}
+.showcase{
+  scroll-snap
+}
+/* SLIDESHOW */
+/* Slider */
+.slider {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: center;
+  background: linear-gradient(to right, #6d46c3, #5277e1);
+}
+
+/* slider navbar 	*/
+/* Hide the browser's default radio button */
+input {
+  margin-bottom: 3rem;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Create a custom radio button  */
+.checkmark {
+  height: 12px;
+  width: 12px;
+  position: relative;
+  left: -1rem;
+  top: -0.1rem;
+  background-color: #7e93e2;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+}
+
+/* when radio button is checked span color is white */
+input:checked + .checkmark {
+  background-color: white;
+}
+
+/* main-slider */
+/* shifts the slider and focusses child 1 */
+.slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+  left: var(--positive-shift);
+}
+.slider__nav:checked:nth-of-type(1)
+  ~ .slider__inner
+  > .slider__contents:nth-child(1) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 2 */
+.slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+  left: 0%;
+}
+.slider__nav:checked:nth-of-type(2)
+  ~ .slider__inner
+  > .slider__contents:nth-child(2) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 3 */
+.slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+  left: var(--negative-shift);
+}
+.slider__nav:checked:nth-of-type(3)
+  ~ .slider__inner
+  > .slider__contents:nth-child(3) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 4 */
+.slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+  left: calc(var(--negative-shift) * 2);
+}
+.slider__nav:checked:nth-of-type(4)
+  ~ .slider__inner
+  > .slider__contents:nth-child(4) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 5 */
+.slider__nav:checked:nth-of-type(5) ~ .slider__inner {
+  left: calc(var(--negative-shift) * 3);
+}
+.slider__nav:checked:nth-of-type(5)
+  ~ .slider__inner
+  > .slider__contents:nth-child(5) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 6 */
+.slider__nav:checked:nth-of-type(6) ~ .slider__inner {
+  left: calc(var(--negative-shift) * 4);
+}
+.slider__nav:checked:nth-of-type(6)
+  ~ .slider__inner
+  > .slider__contents:nth-child(6) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 7 */
+.slider__nav:checked:nth-of-type(7) ~ .slider__inner {
+  left: calc(var(--negative-shift) * 5);
+}
+.slider__nav:checked:nth-of-type(7)
+  ~ .slider__inner
+  > .slider__contents:nth-child(7) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 8 */
+.slider__nav:checked:nth-of-type(8) ~ .slider__inner {
+  left: calc(var(--negative-shift) * 6);
+}
+.slider__nav:checked:nth-of-type(8)
+  ~ .slider__inner
+  > .slider__contents:nth-child(8) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+/* shifts the slider and focusses child 9 */
+.slider__nav:checked:nth-of-type(9) ~ .slider__inner {
+  left: calc(var(--negative-shift) * 7);
+}
+.slider__nav:checked:nth-of-type(9)
+  ~ .slider__inner
+  > .slider__contents:nth-child(9) {
+  opacity: 1;
+  transition: transform 0.4s ease;
+  transform: scale(1.2);
+}
+
+.slider__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 80vh;
+  transition: left 1s ease;
+  display: flex;
+  margin-top: 5rem;
+  flex-flow: row nowrap;
+}
+.slider__contents {
+  opacity: 0.1;
+  height: 70%;
+  width: 70%;
+  padding: 2rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: transparent;
+}
+.center-content {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+}
+.center-content img {
+  width: 100%;
+  height: 100%;
+}
+.center-content h1 {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: white;
+}

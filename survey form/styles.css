@@ -1,0 +1,175 @@
+:root {
+  --primary-color: #00c853;
+  --secondary-color: #4caf50;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #673ab7;
+  overflow-x: hidden;
+}
+#main-header {
+  max-width: 100%;
+  background: #7b1fa2;
+  text-align: center;
+  padding: 2rem 0 7rem 0;
+  color: #eeeeee;
+}
+#survey-form {
+  background-color: #fff;
+  max-width: 50%;
+  max-height: 100%;
+  margin: auto auto;
+  margin-top: -4rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label,
+h3 {
+  font-size: 1rem;
+  display: block;
+  padding: 3%;
+  font-weight: bold;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  align-self: center;
+  width: 95%;
+  height: 2rem;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 0.5rem;
+}
+/* transportation */
+.transport {
+  flex-direction: row;
+  justify-content: center;
+}
+.transport input {
+  display: none;
+}
+
+/* icon handling */
+.transport i {
+  background: #f4f4f4;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+/* icon color */
+.icolor {
+  color: var(--secondary-color);
+}
+i:hover {
+  transform: scale(1.1);
+}
+
+.transport input:checked + label > i {
+  background: #ccc;
+}
+
+.room {
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.room input {
+  display: none;
+}
+.room label {
+  justify-content: space-evenly;
+}
+
+/* room icons styling */
+.room .icolor {
+  color: #f4f4f4;
+  text-shadow: -1px -1px 0 var(--secondary-color),
+    1px -1px 0 var(--secondary-color), -1px 1px 0 var(--secondary-color),
+    1px 1px 0 var(--secondary-color);
+}
+/* selecting number of roommates */
+.room #user1:hover ~ label > i {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+.room #user2:hover ~ label > i {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+.room #user3:hover ~ label > i {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+.room #user4:hover ~ label > i {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+.room #user5:hover ~ label > i {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+/* actual selection of roommates */
+.room input:checked ~ label > i {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* textarea */
+.form-group textarea {
+  height: 95%;
+}
+
+/* buttons */
+button {
+  display: block;
+  padding: 0.5rem;
+  width: 95%;
+  margin: 1rem;
+  color: white;
+  background: var(--primary-color);
+  outline: none;
+  border-radius: 5px;
+}
+button:hover {
+  transform: scale(1.01);
+}
+.btn #reset {
+  margin-bottom: 0;
+}
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* media queries */
+@media (max-width: 500px) {
+  #survey-form {
+    max-width: 80%;
+  }
+
+  .transport i {
+    padding: 0.3rem;
+  }
+  .transport label {
+    padding: 0.2rem;
+  }
+  .transport {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .room {
+    flex-wrap: wrap;
+  }
+}

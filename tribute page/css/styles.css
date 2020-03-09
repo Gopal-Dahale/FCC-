@@ -1,0 +1,228 @@
+:root {
+  --max-width: 1100px;
+  --primary-color: #3de712;
+  --secondary-color: #08b83c;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background: url("../img/background.jpg") center center/cover no-repeat;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--max-width);
+  text-align: center;
+  margin: 0 auto;
+}
+#title {
+  background: var(--secondary-color);
+  color: #300cd3;
+  padding: 1.5rem;
+  line-height: 2rem;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#main #img-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main #img-div #image {
+  
+  max-width: 50%;
+  max-height: 50%;
+  margin: 1rem 0rem;
+}
+
+#main p {
+  padding: 2rem;
+  margin: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: #20eb4c;
+  border-radius: 5px;
+}
+#main #img-div #img-caption {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+#main #tribute-info {
+  padding: 0.5rem;
+}
+#timeline > h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* create line */
+#timeline ul li {
+  list-style: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #fff;
+}
+
+/* boxes */
+
+#timeline ul li .item {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  /* visibility: hidden;
+  opacity: 0; */
+}
+
+/* right side */
+#timeline ul li:nth-child(odd) .item {
+  left: 30px;
+  transform: translateX(10px);
+}
+
+/* left side */
+#timeline ul li:nth-child(even) .item {
+  left: -424px;
+  transform: translateX(-10px);
+}
+
+#timeline ul li .item img {
+  width: 40%;
+  height: 40%;
+  margin: 0;
+}
+#timeline ul li .item .content {
+  text-align: center;
+  width: 90%;
+  height: auto;
+  /* position: relative;
+  left: -10px; */
+  padding: 0.8rem;
+  margin: 0;
+  color: #333;
+}
+#timeline ul li .item .content h3 {
+  color: #222;
+}
+#timeline ul li:nth-child(even) .item .content {
+  left: 200px;
+}
+#timeline ul li .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* dots */
+#timeline ul li:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  background: url("../img/logo.jpg") center center/cover no-repeat;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  transition: background 0.5s ease;
+}
+
+/* arrows */
+#timeline .item:before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+}
+/* right arrows */
+#timeline ul li:nth-child(odd) .item:before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent var(--secondary-color) transparent transparent;
+}
+/* left arrows */
+#timeline ul li:nth-child(even) .item:before {
+  right: -15px;
+  border-width: 8px 0px 8px 16px;
+  border-color: transparent transparent transparent var(--secondary-color);
+}
+
+/* quote */
+.quote {
+  text-align: center;
+  margin: 2rem 4rem;
+  font-style: italic;
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  padding: 1rem 0;
+}
+/* footer */
+
+#footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#footer a {
+  text-decoration: none;
+  color: brown;
+}
+
+/* media queries */
+@media (max-width: 900px) {
+  #main #img-div #image {
+    width: 70%;
+    height: 70%;
+  }
+  #timeline ul li .item {
+    width: 300px;
+  }
+  #timeline ul li:nth-child(even) .item {
+    left: -324px;
+  }
+}
+
+@media (max-width: 600px) {
+  #main #img-div #image {
+    width: 70%;
+    height: 70%;
+    margin-bottom: 1rem;
+  }
+  #timeline ul li {
+    margin-left: 20px;
+  }
+  #timeline ul li .item {
+    width: 80vw;
+  }
+  #timeline ul li:nth-child(even) .item {
+    left: 50px;
+  }
+  #timeline ul li:nth-child(even) .item:before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+  }
+  #footer {
+    margin: 0 1rem 1rem 0;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+}

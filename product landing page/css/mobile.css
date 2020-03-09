@@ -1,0 +1,10 @@
+/* should have at least one media query */
+body {
+  background: #ccc;
+}
+
+@media (max-width: 600px) {
+  body {
+    background: red;
+  }
+}

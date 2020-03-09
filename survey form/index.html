@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/all.css" />
+    <title>Survey form</title>
+  </head>
+  <body>
+    <header id="main-header">
+      <h1 id="title">Time Pass Survey Form</h1>
+      <p id="description">
+        Thank you for passing your time neither to help us nor yourself
+      </p>
+    </header>
+    <main id="main">
+      <form action="#" id="survey-form">
+        <div class="form-group">
+          <label for="name" id="name-label">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="Enter your name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email" id="email-label">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter a valid email "
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="number" id="number-label">Number</label>
+          <input
+            type="number"
+            name="number"
+            id="number"
+            min="1"
+            max="3"
+            placeholder="Choose a valid number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select name="gender" id="dropdown">
+            <option value="Male">Male</option>
+            <option value="Male">Female</option>
+            <option value="Male">Other</option>
+          </select>
+        </div>
+        <h3>What transport do you use the most?</h3>
+        <div class="form-group transport">
+          <input
+            type="checkbox"
+            name="transport1"
+            id="transport1"
+            value="transport1"
+          />
+          <label for="transport1"
+            ><i class="fas fa-walking fa-4x icolor"></i
+          ></label>
+
+          <input
+            type="checkbox"
+            name="transport2"
+            id="transport2"
+            value="transport2"
+          />
+          <label for="transport2"
+            ><i class="fas fa-bus fa-4x icolor "></i
+          ></label>
+
+          <input
+            type="checkbox"
+            name="transport3"
+            id="transport3"
+            value="transport3"
+          />
+          <label for="transport3"
+            ><i class="fas fa-bicycle fa-4x icolor"></i
+          ></label>
+        </div>
+        <h3>How many roommates do you have?</h3>
+        <div class="form-group  room">
+          <input type="radio" name="#" id="user1" value="#" />
+          <label for="user1"><i class="fas fa-user fa-4x icolor"></i></label>
+          <input type="radio" name="#" id="user2" value="#" />
+          <label for="user2"><i class="fas fa-user fa-4x icolor"></i></label>
+          <input type="radio" name="#" id="user3" value="#" />
+          <label for="user3"><i class="fas fa-user fa-4x icolor"></i></label>
+          <input type="radio" name="#" id="user4" value="#" />
+          <label for="user4"><i class="fas fa-user fa-4x icolor"></i></label>
+          <input type="radio" name="#" id="user5" value="#" />
+          <label for="user5"><i class="fas fa-user fa-4x icolor"></i></label>
+        </div>
+        <div class="form-group">
+          <label for="message">Comments</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div class="btn">
+          <button type="reset" id="reset">RESET</button>
+          <button id="submit">Submit</button>
+        </div>
+      </form>
+      <div></div>
+    </main>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
